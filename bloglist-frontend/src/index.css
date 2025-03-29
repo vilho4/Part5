@@ -1,0 +1,39 @@
+body {
+    background-color: white;
+  }
+  .error {
+    display: inline-block;
+    color: red;
+    background: #f8d7da;
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .success {
+    display: inline-block;
+    color: green;
+    background: #d4edda;
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .oneblog {
+    border: 5px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #9797973b;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    max-width: 100%;
+}
+
+.like-button::before {
+  content: "👍";
+  margin-right: 5px;
+}

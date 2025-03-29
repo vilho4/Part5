@@ -1,0 +1,8 @@
+.env
+.rest
+.node_modules
+/dist
+/build
+/public
+.env.local
+.env.*.local
