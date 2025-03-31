@@ -1,4 +1,4 @@
-const OneBlog = ( {blog, onLike, onDelete, user} ) => {
+const OneBlog = ( { blog, onLike, onDelete, user } ) => {
     console.log(user.username,'testi')
     // console.log(blog, 'testi')
     return (
@@ -7,7 +7,7 @@ const OneBlog = ( {blog, onLike, onDelete, user} ) => {
             <div >likes: {blog.likes} <button className="like-button" onClick={() => onLike(blog.id)}></button> </div>
             <div>{blog.user?.name}</div>
             {blog.user?.username === user.username &&(
-            <button className="delete-button" onClick={() => onDelete(blog.id)}>Delete</button>
+                <button className="delete-button" onClick={() => onDelete(blog.id)}>Delete</button>
             )}
         </div>
     )
