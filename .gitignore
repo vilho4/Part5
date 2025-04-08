@@ -1,6 +1,7 @@
 .env
-.rest
-.node_modules
+*.rest
+**/.rest/
+node_modules/
 /dist
 /build
 /public

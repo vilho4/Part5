@@ -6,10 +6,11 @@ const Blog = ({ blog, onLike, onDelete, user }) => {
 
     const toggleDetails = () => {
         setDetailsVisible(prev => !prev)
+
     }
 
     return (
-        <div>
+        <div className='blog'>
             {blog.title} {blog.author}
             <button onClick={toggleDetails}>
                 {detailsVisible ? 'Hide' : 'View'}
