@@ -1,6 +1,4 @@
 const OneBlog = ( { blog, onLike, onDelete, user } ) => {
-    console.log(user.username,'testi')
-    // console.log(blog, 'testi')
     return (
         <div className="oneblog">
             <div>{blog.url}</div>

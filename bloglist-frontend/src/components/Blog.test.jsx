@@ -59,30 +59,6 @@ test('likes are not displayed', () => {
     expect(likes).toBeNull()
 })
 
-// test ('view button displays url and likes', async () => {
-//     const testiblog = {
-//         title: 'Test Blog Title',
-//         author: 'Test Author',
-//         url: 'www.example.com',
-//         likes: 5,
-//         user: {
-//             username: 'John',
-//             name: 'John Doe',
-//         },
-//     }
-
-//     const mockHandler = vi.fn()
-
-//     render (
-//         <Blog blog={blog} toggleDetails={detailsVisible} />
-//     )
-
-//     const user = userEvent.setup()
-//     const button = screen.getByText('View')
-//     await user.click(button)
-
-// })
-
 test ('like is pressed twice', async () => {
     const testiblog = {
         title: 'Test Blog Title',
@@ -120,4 +96,41 @@ test ('like is pressed twice', async () => {
 
     expect(mockLikeHandler.mock.calls).toHaveLength(2)
 
+})
+
+test('toggles blog details when the button is clicked', async () => {
+
+    const testiblog = {
+        title: 'Test Blog Title',
+        author: 'Test Author',
+        url: 'www.example.com',
+        likes: 5,
+        user: {
+            username: 'John',
+            name: 'John Doe',
+        },
+    }
+
+    const currentUser = {
+        username: 'John',
+        name: 'John Doe',
+    }
+
+    const mockLikeHandler = vi.fn()
+    const mockDeleteHandler = vi.fn()
+
+    render(
+        <Blog
+            blog={testiblog}
+            onLike={mockLikeHandler}
+            onDelete={mockDeleteHandler}
+            user={currentUser}
+        />
+    )
+
+    const user = userEvent.setup()
+    const button = screen.getByText('View')
+    await user.click(button)
+
+    expect(screen.getByText(testiblog.url, testiblog.likes, testiblog.user.username)).toBeInTheDocument()
 })
