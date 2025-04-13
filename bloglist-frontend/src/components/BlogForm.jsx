@@ -33,7 +33,7 @@ const BlogForm = ({ onBlogCreated }) => {
           <input 
             id="title" 
             type="text" 
-            name="title" 
+            name="title"
             value={newBlog.title} 
             onChange={handleChange} 
             style={{ width: '10%', padding: '8px', fontSize: '14px', borderRadius: '4px', border: '1px solid #ccc' }}
